@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content">
+        <h3> form validation </h3>
+    Firstname:<br><input type="text" id="my_firstname" placeholder="Firstname"><br>
+    Lastname:<br><input type="text" id="my_lastname" placeholder="Lastname"><br>
+    Email:<br><input type="Email" id="my_email" placeholder="me@examole.com" required><br>
+    Phone number<br><input type="number" id="my_phone_number" placeholder="Phone number"><br>
+    Address:<br><input type="text" id="my_address" placeholder="Address"><br>
+    Passsword:<br><input type="password" id="my_password" placeholder="Password"><br>
+    <input type="submit" onclick="display_data()" value="Send" id="btn">
+    <div id="error"></div>
+    
+     <script>
+
+        // validation 
+        function display_data() {
+            let my_firstname = document.getElementById("my_firstname").value;
+            if(my_firstname == "") {
+                document.getElementById("error").innerHTML = "Please provide your firstname!!!";
+            } else {
+                let my_lastname = document.getElementById("my_lastname").value;
+                if(my_lastname == "") {
+                    document.getElementById("error").innerHTML = "Please provide your lastname!!!";
+                } else {
+                   let my_email= document.getElementById("my_email").value;
+                   if(my_email == ""){
+                    document.getElementById("error").innerHTML = "Please provide your email!!!";
+                   }
+                   else{
+                       let my_phone_number=document.getElementById("my_phone_number").value;
+                       if(my_phone_number == ""){
+                        document.getElementById("error").innerHTML = "Please provide your phone number!!!";  
+                       }
+                       else{
+                        let my_address=document.getElementById("my_address").value;
+                           if(my_address == ""){
+                            document.getElementById("error").innerHTML = "Please provide your adress!!!";    
+                           }
+                           else{
+                               let my_password=document.getElementById("my_password").value;
+                               if( my_password == ""){
+                             document.getElementById("error").innerHTML = "Please provide your password!!!";
+                               }
+                               else{
+                                document.getElementById("error").innerHTML = "";  
+                               }
+                           }
+                       }
+                   }
+                
+                } 
+            }
+        }
+    </script>
+    </div>
+</body>
+</html>
